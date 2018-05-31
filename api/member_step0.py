@@ -23,5 +23,5 @@ new_mem['update_on'] = time_stamp
 
 with MyMongo() as db:
     prev_mem = db.get_df_from_table('assembly', 'member')
-    db.archive_and_dump(prev_mem, new_mem, 'num', 'assembly', 'member',
-                        'member_archive')
+    db.archive_complement_and_dump_new(prev_mem, new_mem, 'num', 'assembly',
+                                       'member', 'member_archive')

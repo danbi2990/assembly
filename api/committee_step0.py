@@ -17,7 +17,9 @@ tionList'
 params_comm = {
     'numOfRows': 10,
     'pageNo': 1,
-    'gbn': 'C06',
+    # 'gbn': 'C06',
+    'start_age_cd': 20,
+
 }
 new_comm = get_df_from_url(url_comm, params_comm)
 time_stamp = datetime.now()
@@ -48,13 +50,15 @@ with MyMongo() as db:
                                 'committeecode', 'update_on']]
 
     prev_comm = db.get_df_from_table('assembly', 'committee')
-    db.archive_and_dump(prev_comm, new_comm, 'committeename', 'assembly',
-                        'committee', 'committee_archive')
+    db.archive_complement_and_dump_new(prev_comm, new_comm, 'committeename',
+                                       'assembly', 'committee',
+                                       'committee_archive')
 
     prev_comm_mem = db.get_df_from_table('assembly', 'committee_member')
-    db.archive_and_dump(prev_comm_mem, new_comm_mem,
-                        ['committeename', 'num'], 'assembly',
-                        'committee_member', 'committee_member_archive')
+    db.archive_complement_and_dump_new(prev_comm_mem, new_comm_mem,
+                                       ['committeename', 'num'], 'assembly',
+                                       'committee_member',
+                                       'committee_member_archive')
 
 '''
 gbn code

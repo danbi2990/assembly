@@ -19,8 +19,8 @@ class MyMongo:
     def get_table_obj(self, schema, table):
         return getattr(getattr(self.client, schema), table)
 
-    def archive_and_dump(self, prev, new, on, schema, main_table,
-                         archive_table):
+    def archive_complement_and_dump_new(self, prev, new, on, schema,
+                                        main_table, archive_table):
         if new.empty:
             raise ValueError('New Data Not Found.')
 
