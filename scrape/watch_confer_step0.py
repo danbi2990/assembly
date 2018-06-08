@@ -35,7 +35,7 @@ with MyMongo() as db:
 count_new = count_total_from_web - count_total_from_db
 count_num_of_records = 20
 count_total_page = count_new // count_num_of_records + 1
-count_total_page_with_spare = count_total_page + 3
+count_total_page_with_spare = count_total_page + 1
 
 queries = []
 for page in range(count_total_page_with_spare, 0, -1):
