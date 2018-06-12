@@ -1,8 +1,15 @@
+if __name__ == "__main__" and __package__ is None:
+    import os
+    import sys
+    cur_dir = os.path.split(os.getcwd())[0]
+    if cur_dir not in sys.path:
+        sys.path.append(cur_dir)
+
 from airflow import DAG
 from airflow.operators import BashOperator
 from datetime import datetime, timedelta
 
-BASE_TASK_PATH = '/home/jake/airflow/dags'
+from dag.common import PYTHON, ASSEMBLY
 
 default_args = {
     'owner': 'jake',
@@ -16,7 +23,7 @@ default_args = {
 }
 
 # Create the DAG
-dag = DAG('etl_dag',
+dag = DAG('watch_committee_step0',
           default_args=default_args,
           schedule_interval='15 * * * *')
 
@@ -24,12 +31,12 @@ dag = DAG('etl_dag',
 # extract_template = BASE_TASK_PATH +\
 #     'extract.sh {{ts_nodash}} {{params.user_host}} '+\
 #     '{{params.remote_dir}} {{params.local_dir}}'
-extract_template = f'{BASE_TASK_PATH}/'
+task = f'{PYTHON} {ASSEMBLY}/scrape/watch_committee_step0.py'
 extract_task = BashOperator(
     task_id='extract',
-    bash_command=extract_template,
-    params={
-        'user_host': REMOTE_USER_HOST,
-        'remote_dir': REMOTE_PATH,
-        'local_dir': DATASET_PATH_ORIG},
+    bash_command=task,
+    # params={
+    #     'user_host': REMOTE_USER_HOST,
+    #     'remote_dir': REMOTE_PATH,
+    #     'local_dir': DATASET_PATH_ORIG},
     dag=dag)
