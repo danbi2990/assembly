@@ -5,8 +5,9 @@ if __name__ == "__main__" and __package__ is None:
     if cur_dir not in sys.path:
         sys.path.append(cur_dir)
 
+print(sys.path)
 from airflow import DAG
-from airflow.operators import BashOperator
+from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
 
 from dag.common import PYTHON, ASSEMBLY
