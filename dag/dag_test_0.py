@@ -6,6 +6,8 @@ if __name__ == "__main__" and __package__ is None:
     if project_dir not in sys.path:
         sys.path.append(project_dir)
 
+print(sys.path)
+
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
