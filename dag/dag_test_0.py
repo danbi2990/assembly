@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 
 from dag.common import PYTHON, ASSEMBLY
 
+import sys
+print(sys.path)
+
 default_args = {
     'owner': 'jake',
     # 'depends_on_past': True,
