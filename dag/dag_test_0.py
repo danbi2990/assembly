@@ -1,17 +1,3 @@
-# if __name__ == "__main__" and __package__ is None:
-#     # import os
-#     import sys
-#     # cur_dir = os.path.split(os.getcwd())[0]
-#     project_dir = '/home/jake/Dev/assembly'
-#     if project_dir not in sys.path:
-#         sys.path.append(project_dir)
-
-import sys
-project_dir = '/home/jake/Dev/assembly'
-if project_dir not in sys.path:
-    sys.path.append(project_dir)
-print(sys.path)
-
 from airflow import DAG
 from airflow.operators.bash_operator import BashOperator
 from datetime import datetime, timedelta
