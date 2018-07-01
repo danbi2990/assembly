@@ -13,7 +13,7 @@ default_args = {
 }
 
 dag = DAG(
-    'assembly_scrape_a',
+    'assembly_scrape_b',
     default_args=default_args,
 )
 
