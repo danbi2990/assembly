@@ -1,9 +1,9 @@
-if __name__ == "__main__" and __package__ is None:
-    import os
-    import sys
-    cur_dir = os.path.split(os.getcwd())[0]
-    if cur_dir not in sys.path:
-        sys.path.append(cur_dir)
+# if __name__ == "__main__" and __package__ is None:
+#     import os
+#     import sys
+#     cur_dir = os.path.split(os.getcwd())[0]
+#     if cur_dir not in sys.path:
+#         sys.path.append(cur_dir)
 
 from datetime import datetime
 import re
