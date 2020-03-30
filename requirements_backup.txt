@@ -5,7 +5,7 @@ argcomplete==1.8.2
 asn1crypto==0.24.0
 backcall==0.1.0
 beautifulsoup4==4.5.3
-bleach==2.1.2
+bleach==3.1.4
 brewer2mpl==1.4.1
 certifi==2018.1.18
 cffi==1.11.5
