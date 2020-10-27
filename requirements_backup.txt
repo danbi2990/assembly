@@ -15,7 +15,7 @@ colorlover==0.2.1
 configparser==3.5.0
 croniter==0.3.23
 crypto==1.4.1
-cryptography==2.2.2
+cryptography==3.2
 cufflinks==0.12.1
 cycler==0.10.0
 decorator==4.2.1
