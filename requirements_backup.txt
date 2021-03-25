@@ -97,7 +97,7 @@ python-nvd3==0.14.2
 python-pptx==0.6.5
 python-slugify==1.1.4
 pytz==2018.3
-PyYAML==3.12
+PyYAML==5.4
 pyzmq==17.0.0
 qtconsole==4.3.1
 requests==2.18.4
